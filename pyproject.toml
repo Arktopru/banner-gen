@@ -1,0 +1,24 @@
+[project]
+name = "banner-gen"
+version = "0.1.0"
+description = "TUI/CLI генератор ASCII-баннеров для Spring Boot (официальные figlet-шрифты patorjk, без интернета)"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "pyfiglet>=1.0",
+    "textual>=0.80",
+]
+
+[project.scripts]
+banner-gen = "banner_gen.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["banner_gen*"]
+
+[tool.setuptools.package-data]
+banner_gen = ["fonts/*.flf"]
